@@ -1,0 +1,22 @@
+spring.application.name: otter
+spring.main.banner-mode: off
+server.port: 5000
+spring:
+  security:
+    user:
+      name: demo
+      password: $2a$12$O5t/midC3o3nxg0PeGqcVOMmLcPV2N7DPfJxv74ao0unOJi0rqXoy # 1234
+server:
+  error:
+    include-stacktrace: never
+
+server.max-http-request-header-size: 8KB
+
+jwt:
+  secret: m37dBV9J76I616HXT2jDkJ1XE9lc7R7uHXNnu1TL9Tec050jvPUNS7gkV6XOHq8ejBckVwHQHAtC7GywN1iyww==
+  expires: PT1H
+  refresh-expires: P7D
+
+#logging.level:
+#  'org.springframework.security.web.FilterChainProxy': TRACE
+#  'org.springframework.security.web.firewall.HttpStatusRequestRejectedHandler': DEBUG
