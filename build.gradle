@@ -1,14 +1,18 @@
 plugins {
     id 'java'
-    id 'org.springframework.boot' version '3.2.4'
-    id 'io.spring.dependency-management' version '1.1.4'
+    id 'org.springframework.boot' version '3.3.0'
+    id 'io.spring.dependency-management' version '1.1.5'
+}
+
+ext {
+    springBootAdminVersion = "3.3.0"
 }
 
 group = 'kr.kdev'
 version = '0.0.1-SNAPSHOT'
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_17
+    sourceCompatibility = JavaVersion.VERSION_21
 }
 
 configurations {
@@ -39,6 +43,8 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-undertow'
     implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6'
     implementation 'io.jsonwebtoken:jjwt-api:0.12.5'
+//    implementation 'de.codecentric:spring-boot-admin-starter-client'
+//    implementation 'de.codecentric:spring-boot-admin-starter-server'
     runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.12.5'
     implementation 'io.jsonwebtoken:jjwt-jackson:0.12.5'
     compileOnly 'org.projectlombok:lombok'
@@ -51,6 +57,19 @@ dependencies {
     testImplementation 'org.springframework.security:spring-security-test'
     testImplementation 'org.projectlombok:lombok'
     testAnnotationProcessor 'org.projectlombok:lombok'
+
+    implementation 'org.springframework.boot:spring-boot-starter-mail'
+    implementation 'com.google.guava:guava:33.2.1-jre' // for ratelimiter
+//    implementation 'org.springframework.retry:spring-retry:2.0.6'
+//    implementation 'io.github.resilience4j:resilience4j-spring-boot3:2.2.0'
+
+    implementation 'org.apache.httpcomponents.client5:httpclient5'
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "de.codecentric:spring-boot-admin-dependencies:$springBootAdminVersion"
+    }
 }
 
 tasks.named('test') {

@@ -20,3 +20,15 @@ jwt:
 #logging.level:
 #  'org.springframework.security.web.FilterChainProxy': TRACE
 #  'org.springframework.security.web.firewall.HttpStatusRequestRejectedHandler': DEBUG
+
+spring.mail:
+  username:
+  password:
+  host: 'email-smtp.ap-northeast-2.amazonaws.com'
+  port: 587
+  properties:
+    mail.smtp.ssl.enable: false
+    mail.smtp.starttls.enable: true
+    mail.debug: false
+  sending-rate:
+  from:
