@@ -1,7 +1,7 @@
 # Otter
 
 ## Backend
-- JDK 17 (Eclipse Temurin)
+- JDK 21 (Eclipse Temurin)
 ```shell
 ./gradlew bootRun
 ```
