@@ -43,3 +43,20 @@ management:
       cache:
         time-to-live: 1s
       show-details: always
+  endpoints:
+    web:
+      exposure:
+        exclude: heapdump, threaddump, logfile
+        include: health, info, startup, env, loggers
+
+  info:
+    java:
+      enabled: on
+
+  httpexchanges:
+    recording:
+      enabled: off
+
+logging.level:
+  'com.amazonaws.util.EC2MetadataUtils': error
+  'com.amazonaws.internal.InstanceMetadataServiceResourceFetcher': error
