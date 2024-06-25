@@ -32,7 +32,8 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.boot:spring-boot-starter-cache'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-//    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+    implementation 'org.springframework.boot:spring-boot-starter-data-elasticsearch'
     implementation 'org.springframework.boot:spring-boot-starter-jdbc'
     implementation 'org.springframework.boot:spring-boot-starter-mustache'
     implementation 'org.springframework.boot:spring-boot-starter-quartz'
@@ -69,8 +70,9 @@ dependencies {
     implementation platform('com.amazonaws:aws-java-sdk-bom:1.12.748')
     implementation 'com.amazonaws:aws-java-sdk-ec2'
 
-//    implementation platform('software.amazon.awssdk:bom:2.21.4')
-//    implementation 'software.amazon.awssdk:imds'
+    implementation platform('software.amazon.awssdk:bom:2.21.4')
+    implementation 'software.amazon.awssdk:imds'
+    implementation 'software.amazon.awssdk:url-connection-client'
 }
 
 dependencyManagement {
